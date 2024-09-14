@@ -1,13 +1,13 @@
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings
+# from langchain_openai import OpenAIEmbeddings
+from langchain_ollama import OllamaEmbeddings as OpenAIEmbeddings  # Workaround for OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain import PromptTemplate
 from openai import RateLimitError
 from typing import List
 
-from openai import RateLimitError
 from rank_bm25 import BM25Okapi
 
 import fitz
